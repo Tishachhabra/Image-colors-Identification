@@ -15,7 +15,7 @@ body::before {
     background: url('bg.png') no-repeat center center fixed;
     background-size: cover;
     opacity: 0.5;                       /*opacity of bg */
-    z-index: -1;                        /* it stays behind the content */
+    z-index: -1;                        /* bg image stays behind the content */
 }
 
 .navbar {
@@ -63,7 +63,6 @@ body::before {
 }
 
 .navbar-toggler {
-    /* background-color: white; */
     border: none;
     color: #ffffff;
     cursor: pointer;
@@ -71,7 +70,7 @@ body::before {
     padding: 10px;
 }
 
-.navbar-toggler-icon {
+.navbar-toggler-icon {                                                        /*Hamberger menu*/
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg');
 }
 
@@ -81,7 +80,7 @@ body::before {
     color: #07026f;
     animation: colorChange 2s infinite alternate;
 }
-@keyframes colorChange {
+@keyframes colorChange {                                            /* Transitions */
     0% {color: rgb(76, 0, 255);}
     50% {color: rgba(0, 4, 249, 0.597);}
 }
@@ -91,24 +90,24 @@ body::before {
     height: 280px;
     padding: 25px;
     display: flex;
-    flex-direction: column; /* Ensures the elements stack vertically */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #0b0177;
-    border: 4px dashed #4B70F5; /* Darker related color border */
+    border: 4px dashed #4B70F5; 
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin: 0 auto;
-    background-color: #a7e3f6; /* Light cyan background */
+    background-color: #a7e3f6;
     position: relative;
 }
 
 .drop-zone:hover {
-    background-color: #a7eff9; /* Slightly darker cyan on hover */
-    border-color: #2a56f5; /* Darker border on hover */
-    box-shadow: 0 0 13px #21126c; /* Add shadow effect on hover */
+    background-color: #a7eff9; 
+    border-color: #2a56f5; 
+    box-shadow: 0 0 13px #21126c;
     transform: translateY(-2px);
 }
 
@@ -121,7 +120,7 @@ body::before {
 .drop-zone__thumb {
     width: 80px;            /* size of the upload icon */
     height: 80px;
-    margin-bottom: 15px; /* Add some space between the icon and the text */
+    margin-bottom: 15px;
 }
 
 .drop-zone__input {
@@ -132,13 +131,13 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #0d018b; /* Ensure the text color is consistent */
+    color: #0d018b;
 }
 
 
 #uploaded-image {
     max-width: 100%;
-    max-height: 300px; /* Adjust the maximum height to fit within the container */
+    max-height: 300px; 
     margin-top: 10px;
 }
 
@@ -149,13 +148,13 @@ body::before {
     color: #200b8b;
 }
 
-#analyzed-image{
+#analyzed-image{                            /* on result page */
     max-height: 500px;
     margin: 0 auto;
 }
 
 .process {
-    background-color: #2196f3; /* Blue color */
+    background-color: #2196f3; 
     border: none;
     padding: 14px 28px;
     color: white;
@@ -168,7 +167,7 @@ body::before {
 
 .process:hover {
     background-color: #1976d2;
-    transform: scale(1.05);
+    transform: scale(1.05);                        /* A little pop up on hovering*/
 }
 
 .process:active {
@@ -179,7 +178,7 @@ body::before {
 .main-image {
     width: 100%;
     height: auto;
-    max-height: 300px; /* Reduce the height */
+    max-height: 300px; 
     opacity: 0.9;
     transition: opacity 0.3s ease-in-out;
     margin-bottom: 20px;
@@ -216,5 +215,5 @@ body::before {
 }
 
 #uploaded-container {
-    margin-bottom: 20px; /* Ensure some spacing between the uploaded container and the process button */
+    margin-bottom: 20px;
 }
