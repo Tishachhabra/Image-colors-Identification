@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Colors on Urine Strip</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item active"><a style="color:white;" href="/">Home</a></li>
+            <li class="nav-item">About</li>
+            <li class="nav-item">Contact</li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+<br>
+    <div >
+        <h1 class="text-center interactive-heading">Identify Colors on Urine Strip</h1>
+        <br>
+        <div class="text-center">
+            <form action="/analyze" method="POST" enctype="multipart/form-data">
+                <div class="drop-zone" id="drop-zone">
+                    <img src="static/upload.webp" alt="Upload Icon" class="drop-zone__thumb">
+                    <span style="font-size:22px;" class="drop-zone__prompt"><i class="fas fa-upload"></i> Drop file here or click to upload</span>
+                    <input type="file" name="image" class="drop-zone__input" id="image-input" accept="image/*">
+                </div>
+                <div id="uploaded-container" style="display:none;">
+                    <img id="uploaded-image" src="#" alt="Uploaded Image" class="img-fluid">
+                    <p id="uploaded-filename" class="uploaded-text"></p>
+                </div>
+                <button type="submit" class="process btn btn-primary" id="process-button" style="display:none;">Process</button>
+            </form>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>

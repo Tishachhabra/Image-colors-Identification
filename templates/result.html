@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static\styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item active"><a style="color:white;" href="/">Home</a></li>
+            <li class="nav-item">About</li>
+            <li class="nav-item">Contact</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center interactive-heading">Analysis Result</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="data:image/png;base64,{{ image_data }}" alt="Uploaded Image" style="display:block;" class="img-fluid" id="analyzed-image">
+            </div>
+            <div class="col-md-6">
+                <h3>Colors Identified :-</h3>
+                <br>
+                <pre id="colors"></pre>
+            </div>
+        </div>
+    </div>
+    <script>
+        const colors = {{colors | tojson}};
+
+        // Function to format the dictionary
+        function formatDictionary(dict) {
+            let formatted = '';
+            for (let key in dict) {
+                if (dict.hasOwnProperty(key)) {
+                    formatted += `${key}: ${dict[key].join(', ')}\n`;
+                }
+            }
+            return formatted;
+        }
+
+        // Display the formatted dictionary in the <pre> element
+        document.getElementById('colors').textContent = formatDictionary(colors);
+    </script>
+</body>
+</html>
