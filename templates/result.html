@@ -31,10 +31,9 @@
         </div>
     </div>
     <script>
-        const colors = {{colors | tojson}};
-
-        // Function to format the dictionary
-        function formatDictionary(dict) {
+        const colors = {{colors | tojson}};                            //Get colors dictionary result 
+        
+        function formatDictionary(dict) {                               //Function to format dictionary
             let formatted = '';
             for (let key in dict) {
                 if (dict.hasOwnProperty(key)) {
@@ -44,7 +43,7 @@
             return formatted;
         }
 
-        // Display the formatted dictionary in the <pre> element
+        // Display formatted dictionary in the <pre> element
         document.getElementById('colors').textContent = formatDictionary(colors);
     </script>
 </body>
