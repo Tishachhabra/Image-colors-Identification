@@ -1,4 +1,4 @@
-// This function updates the thumbnail of the uploaded file
+// Updates the thumbnail of the uploaded file
 function updateThumbnail(dropZoneElement, file) {
     const dropZoneContainer = document.getElementById('drop-zone');
     const uploadedContainer = document.getElementById('uploaded-container');
@@ -15,19 +15,18 @@ function updateThumbnail(dropZoneElement, file) {
     // Display the process button
     processbut.style.display = 'block';
 
-    // Show thumbnail for image files
+    // Show thumbnail for uploaded image
     if (file.type.startsWith("image/")) {                   //Checks if the uploaded file is an image
         const reader = new FileReader();
 
         reader.readAsDataURL(file);
         reader.onload = () => {
             thumbnailElement.src = reader.result;
-            filenameElement.textContent = file.name;
+            filenameElement.textContent = file.name;                //Show File name
         };
     }
 }
 
-// Select all elements with the class .drop-zone__input
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     const dropZoneElement = inputElement.closest(".drop-zone");
 
@@ -43,13 +42,13 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         }
     });
 
-    // When a file is dragged over the drop zone, add a class to style it
+    // When a file is dragged over the drop zone, add styling
     dropZoneElement.addEventListener("dragover", (e) => {
         e.preventDefault();
         dropZoneElement.classList.add("drop-zone--over");
     });
 
-    // When the drag leaves the drop zone or ends, remove the added class
+    // When the drag leaves the drop zone or ends, remove the added styles
     ["dragleave", "dragend"].forEach((type) => {
         dropZoneElement.addEventListener(type, (e) => {
             dropZoneElement.classList.remove("drop-zone--over");
@@ -88,13 +87,12 @@ document.getElementById("process-button").addEventListener("click", function () 
         method: 'POST',
         body: formData
     })
-    .then(response => response.json()) // Parse the JSON response
+    .then(response => response.json()) 
     .then(data => {
-        console.log(data); // Log the data for debugging
-        alert("Image processed successfully!"); // Alert the user of successful processing
+        console.log(data); 
+        alert("Image processed successfully!");
     })
     .catch(error => {
-        console.error("Error:", error); // Log any errors for debugging
-        // alert("An error occurred while processing the image."); // Alert the user of an error
+        console.error("Error:", error); 
     });
 });
