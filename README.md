@@ -40,7 +40,7 @@ Alternatively, run app.py directly via VS Code.
 ![Urine Test Strip Analysis](./images/Screenshots/Home%20page.png)
 
 ### 5)Upload an image via drag-drop or by browsing. 
-( Find images <a href="./images/Samples" target="_blank"> here </a>if you need good quality images to test)
+(Find images [here](./images/Samples) if you need good quality images to test)
 
 ![Urine Test Strip Analysis](./images/Screenshots/Uploaded%20image.png)
 
